@@ -21,30 +21,48 @@ namespace App.Core.Services
         }
 
 
-        Product IProductService.Add(Product product)
+        public Product Add(Product product)
         {
-            throw new NotImplementedException();
+            if (product != null)
+            {
+                product.Id = GenerateId();
+                _products.Add(product);
+            }
+            return product;
         }
 
-        bool IProductService.Delete(string id)
+        public bool Delete(string id)
         {
             throw new NotImplementedException();
         }
 
        
-        Product IProductService.GetById(string id)
+        public Product?  GetById(string id)
+        {
+
+            Product? prod = _products.Find(p => p.Id == id);
+            return prod;
+        }
+
+        public List<Product> Search(string text, ProductCategoryEnum? category, ProductStatusEnum? status)
         {
             throw new NotImplementedException();
         }
 
-        List<Product> IProductService.Search(string text, ProductCategoryEnum? category, ProductStatusEnum? status)
+        public bool Update(Product product)
         {
-            throw new NotImplementedException();
-        }
-
-        bool IProductService.Update(Product product)
-        {
-            throw new NotImplementedException();
+            if (product != null)
+            {
+                Product? existing = _products.Find(p=>p.Id== product.Id);
+                if (existing == null) return false;
+                existing.Name = product.Name;
+                existing.Category = product.Category;
+                existing.Price = product.Price;
+                existing.Status = product.Status;
+                existing.Stock = product.Stock;
+                return true;
+            }
+            return false;
         }
         private void GenerateFakeProducts()
         {

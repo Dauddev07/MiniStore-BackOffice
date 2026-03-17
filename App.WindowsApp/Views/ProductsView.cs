@@ -45,7 +45,7 @@ namespace App.WindowsApp.Views
 
         private void tsbAdd_Click(object sender, EventArgs e)
         {
-            ProductForm prodForm = new ProductForm(ProductFormModeEnum.Add,null);
+            ProductForm prodForm = new ProductForm(ProductFormModeEnum.Add,null,service);
             prodForm.ShowDialog();
         }
 
@@ -55,7 +55,7 @@ namespace App.WindowsApp.Views
             Product?  selectedProduct=_dgvbindingSource.Current as Product;
             if (selectedProduct != null)
             {
-                ProductForm prodForm = new ProductForm(ProductFormModeEnum.Edit, selectedProduct);
+                ProductForm prodForm = new ProductForm(ProductFormModeEnum.Edit, selectedProduct,service);
                 prodForm.ShowDialog();
             }
         }
@@ -65,7 +65,7 @@ namespace App.WindowsApp.Views
             Product? selectedProduct = _dgvbindingSource.Current as Product;
             if (selectedProduct != null)
             {
-                ProductForm prodForm = new ProductForm(ProductFormModeEnum.View, selectedProduct);
+                ProductForm prodForm = new ProductForm(ProductFormModeEnum.View, selectedProduct,service);
                 prodForm.ShowDialog();
             }
         }
