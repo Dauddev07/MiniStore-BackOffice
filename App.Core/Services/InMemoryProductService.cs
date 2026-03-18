@@ -33,7 +33,9 @@ namespace App.Core.Services
 
         public bool Delete(string id)
         {
-            throw new NotImplementedException();
+            Product prodToBeDeleted = GetById(id);
+            _products.Remove(prodToBeDeleted);
+            return true;
         }
 
        
@@ -46,7 +48,17 @@ namespace App.Core.Services
 
         public List<Product> Search(string text, ProductCategoryEnum? category, ProductStatusEnum? status)
         {
-            throw new NotImplementedException();
+            List<Product> _filtered = _products.ToList();
+            _filtered=_filtered.Where(p => p.Name.Contains(text)).ToList();
+            if(category is not null)
+            {
+                _filtered = _filtered.Where(p => p.Category == category).ToList();
+            }
+            if (status is not null)
+            {
+                _filtered = _filtered.Where(p => p.Status == status).ToList();
+            }
+            return _filtered;
         }
 
         public bool Update(Product product)

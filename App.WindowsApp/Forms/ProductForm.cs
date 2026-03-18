@@ -21,6 +21,7 @@ namespace App.WindowsApp.Forms
             InitializeComponent();
             numPrice.Maximum = Decimal.MaxValue;
             numStock.Maximum = Int32.MaxValue;
+
             cmbCategory.Items.Clear();
             cmbCategory.DataSource = Enum.GetValues(typeof(ProductCategoryEnum));
             cmbCategory.SelectedIndex = 0;
@@ -81,8 +82,18 @@ namespace App.WindowsApp.Forms
                 bool isUpdated = _service.Update(_product);
 
             }
+            this.Close();
         }
 
+        private void ProductForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

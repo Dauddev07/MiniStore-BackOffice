@@ -210,6 +210,7 @@
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
@@ -236,6 +237,7 @@
             Name = "ProductForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "ProductForm";
+            FormClosing += ProductForm_FormClosing;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numPrice).EndInit();
