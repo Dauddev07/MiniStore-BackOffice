@@ -78,7 +78,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-            tableLayoutPanel1.Size = new Size(800, 283);
+            tableLayoutPanel1.Size = new Size(779, 283);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // lblCategory
@@ -138,52 +138,52 @@
             // txtName
             // 
             txtName.Dock = DockStyle.Fill;
-            txtName.Location = new Point(163, 3);
+            txtName.Location = new Point(158, 3);
             txtName.Name = "txtName";
-            txtName.Size = new Size(634, 27);
+            txtName.Size = new Size(618, 27);
             txtName.TabIndex = 0;
             // 
             // cmbCategory
             // 
             cmbCategory.Dock = DockStyle.Fill;
             cmbCategory.FormattingEnabled = true;
-            cmbCategory.Location = new Point(163, 53);
+            cmbCategory.Location = new Point(158, 53);
             cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(634, 28);
+            cmbCategory.Size = new Size(618, 28);
             cmbCategory.TabIndex = 1;
             // 
             // numPrice
             // 
             numPrice.Dock = DockStyle.Fill;
-            numPrice.Location = new Point(163, 103);
+            numPrice.Location = new Point(158, 103);
             numPrice.Name = "numPrice";
-            numPrice.Size = new Size(634, 27);
+            numPrice.Size = new Size(618, 27);
             numPrice.TabIndex = 2;
             // 
             // numStock
             // 
             numStock.Dock = DockStyle.Fill;
-            numStock.Location = new Point(163, 153);
+            numStock.Location = new Point(158, 153);
             numStock.Name = "numStock";
-            numStock.Size = new Size(634, 27);
+            numStock.Size = new Size(618, 27);
             numStock.TabIndex = 3;
             // 
             // cmbStatus
             // 
             cmbStatus.Dock = DockStyle.Fill;
             cmbStatus.FormattingEnabled = true;
-            cmbStatus.Location = new Point(163, 203);
+            cmbStatus.Location = new Point(158, 203);
             cmbStatus.Name = "cmbStatus";
-            cmbStatus.Size = new Size(634, 28);
+            cmbStatus.Size = new Size(618, 28);
             cmbStatus.TabIndex = 4;
             // 
             // txtId
             // 
             txtId.Dock = DockStyle.Fill;
-            txtId.Location = new Point(163, 253);
+            txtId.Location = new Point(158, 253);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
-            txtId.Size = new Size(634, 27);
+            txtId.Size = new Size(618, 27);
             txtId.TabIndex = 5;
             // 
             // flowLayoutPanel1
@@ -192,38 +192,46 @@
             flowLayoutPanel1.Controls.Add(btnSave);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
             flowLayoutPanel1.FlowDirection = FlowDirection.RightToLeft;
-            flowLayoutPanel1.Location = new Point(0, 325);
+            flowLayoutPanel1.Location = new Point(0, 369);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(800, 125);
+            flowLayoutPanel1.Size = new Size(779, 57);
             flowLayoutPanel1.TabIndex = 1;
             // 
             // btnCancel
             // 
             btnCancel.AutoSize = true;
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancel.Image = (Image)resources.GetObject("btnCancel.Image");
             btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancel.Location = new Point(697, 9);
+            btnCancel.Location = new Point(669, 9);
             btnCancel.Margin = new Padding(9);
             btnCancel.Name = "btnCancel";
             btnCancel.Padding = new Padding(3);
-            btnCancel.Size = new Size(94, 36);
+            btnCancel.Size = new Size(101, 39);
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Cancel";
+            btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = true;
             btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
             btnSave.AutoSize = true;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSave.Image = (Image)resources.GetObject("btnSave.Image");
             btnSave.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSave.Location = new Point(585, 9);
+            btnSave.Location = new Point(555, 9);
             btnSave.Margin = new Padding(9);
             btnSave.Name = "btnSave";
             btnSave.Padding = new Padding(3);
-            btnSave.Size = new Size(94, 36);
+            btnSave.Size = new Size(96, 39);
             btnSave.TabIndex = 0;
             btnSave.Text = "Save";
+            btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
@@ -231,7 +239,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(779, 426);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(tableLayoutPanel1);
             Name = "ProductForm";
