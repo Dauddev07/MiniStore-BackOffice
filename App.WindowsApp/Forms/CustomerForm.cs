@@ -1,4 +1,6 @@
-﻿using System;
+﻿using App.Core.Contracts;
+using App.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +12,7 @@ namespace App.WindowsApp.Forms
 {
     public partial class CustomerForm : Form
     {
-        public CustomerForm()
+        public CustomerForm(ICustomerService _customerService, CustomerFormModeEnum mode,Customer customer=null)
         {
             InitializeComponent();
         }

@@ -46,6 +46,7 @@ partial class MainForm
         statusStrip = new StatusStrip();
         tsLabelStatus = new ToolStripStatusLabel();
         pnlContent = new Panel();
+        btnCustomer = new Button();
         pnlHeader.SuspendLayout();
         flpRight.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -80,7 +81,7 @@ partial class MainForm
         // 
         // pictureBox1
         // 
-        pictureBox1.Image = WindowsApp.Properties.Resources.user;
+        pictureBox1.Image = Properties.Resources.user;
         pictureBox1.Location = new Point(3, 3);
         pictureBox1.Name = "pictureBox1";
         pictureBox1.Size = new Size(32, 32);
@@ -110,7 +111,7 @@ partial class MainForm
         // 
         // pbLogo
         // 
-        pbLogo.Image = WindowsApp.Properties.Resources.building_store;
+        pbLogo.Image = Properties.Resources.building_store;
         pbLogo.Location = new Point(3, 3);
         pbLogo.Name = "pbLogo";
         pbLogo.Size = new Size(32, 32);
@@ -131,6 +132,7 @@ partial class MainForm
         // 
         flpNav.Controls.Add(btnDashboard);
         flpNav.Controls.Add(btnProducts);
+        flpNav.Controls.Add(btnCustomer);
         flpNav.Controls.Add(btnOrders);
         flpNav.Controls.Add(btnReports);
         flpNav.Controls.Add(btnSync);
@@ -149,7 +151,7 @@ partial class MainForm
         // 
         btnDashboard.FlatAppearance.BorderSize = 0;
         btnDashboard.FlatStyle = FlatStyle.Flat;
-        btnDashboard.Image = WindowsApp.Properties.Resources.dashboard_svg;
+        btnDashboard.Image = Properties.Resources.dashboard_svg;
         btnDashboard.ImageAlign = ContentAlignment.MiddleLeft;
         btnDashboard.Location = new Point(3, 3);
         btnDashboard.Name = "btnDashboard";
@@ -166,7 +168,7 @@ partial class MainForm
         // 
         btnProducts.FlatAppearance.BorderSize = 0;
         btnProducts.FlatStyle = FlatStyle.Flat;
-        btnProducts.Image = WindowsApp.Properties.Resources.garden_cart;
+        btnProducts.Image = Properties.Resources.garden_cart;
         btnProducts.Location = new Point(3, 49);
         btnProducts.Name = "btnProducts";
         btnProducts.Size = new Size(163, 40);
@@ -181,8 +183,8 @@ partial class MainForm
         // 
         btnOrders.FlatAppearance.BorderSize = 0;
         btnOrders.FlatStyle = FlatStyle.Flat;
-        btnOrders.Image = WindowsApp.Properties.Resources.file_invoice;
-        btnOrders.Location = new Point(3, 95);
+        btnOrders.Image = Properties.Resources.file_invoice;
+        btnOrders.Location = new Point(3, 141);
         btnOrders.Name = "btnOrders";
         btnOrders.Size = new Size(163, 40);
         btnOrders.TabIndex = 2;
@@ -195,8 +197,8 @@ partial class MainForm
         // 
         btnReports.FlatAppearance.BorderSize = 0;
         btnReports.FlatStyle = FlatStyle.Flat;
-        btnReports.Image = WindowsApp.Properties.Resources.report;
-        btnReports.Location = new Point(3, 141);
+        btnReports.Image = Properties.Resources.report;
+        btnReports.Location = new Point(3, 187);
         btnReports.Name = "btnReports";
         btnReports.Size = new Size(163, 40);
         btnReports.TabIndex = 3;
@@ -209,8 +211,8 @@ partial class MainForm
         // 
         btnSync.FlatAppearance.BorderSize = 0;
         btnSync.FlatStyle = FlatStyle.Flat;
-        btnSync.Image = WindowsApp.Properties.Resources.reload;
-        btnSync.Location = new Point(3, 187);
+        btnSync.Image = Properties.Resources.reload;
+        btnSync.Location = new Point(3, 233);
         btnSync.Name = "btnSync";
         btnSync.Size = new Size(163, 40);
         btnSync.TabIndex = 4;
@@ -223,8 +225,8 @@ partial class MainForm
         // 
         btnLogs.FlatAppearance.BorderSize = 0;
         btnLogs.FlatStyle = FlatStyle.Flat;
-        btnLogs.Image = WindowsApp.Properties.Resources.logs;
-        btnLogs.Location = new Point(3, 233);
+        btnLogs.Image = Properties.Resources.logs;
+        btnLogs.Location = new Point(3, 279);
         btnLogs.Name = "btnLogs";
         btnLogs.Size = new Size(163, 40);
         btnLogs.TabIndex = 5;
@@ -237,9 +239,9 @@ partial class MainForm
         // 
         btnSettings.FlatAppearance.BorderSize = 0;
         btnSettings.FlatStyle = FlatStyle.Flat;
-        btnSettings.Image = WindowsApp.Properties.Resources.settings;
+        btnSettings.Image = Properties.Resources.settings;
         btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
-        btnSettings.Location = new Point(3, 279);
+        btnSettings.Location = new Point(3, 325);
         btnSettings.Name = "btnSettings";
         btnSettings.Padding = new Padding(10, 0, 0, 0);
         btnSettings.Size = new Size(163, 40);
@@ -273,6 +275,21 @@ partial class MainForm
         pnlContent.Name = "pnlContent";
         pnlContent.Size = new Size(655, 509);
         pnlContent.TabIndex = 4;
+        // 
+        // btnCustomer
+        // 
+        btnCustomer.FlatAppearance.BorderSize = 0;
+        btnCustomer.FlatStyle = FlatStyle.Flat;
+        btnCustomer.Image = Properties.Resources.user;
+        btnCustomer.Location = new Point(3, 95);
+        btnCustomer.Name = "btnCustomer";
+        btnCustomer.Size = new Size(163, 40);
+        btnCustomer.TabIndex = 7;
+        btnCustomer.Text = "Customer";
+        btnCustomer.TextAlign = ContentAlignment.MiddleLeft;
+        btnCustomer.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnCustomer.UseVisualStyleBackColor = true;
+        btnCustomer.Click += btnCustomer_Click;
         // 
         // MainForm
         // 
@@ -322,4 +339,5 @@ partial class MainForm
     private System.Windows.Forms.Label lblUser;
     private System.Windows.Forms.ToolStripStatusLabel tsLabelStatus;
     private System.Windows.Forms.Panel pnlContent;
+    private Button btnCustomer;
 }

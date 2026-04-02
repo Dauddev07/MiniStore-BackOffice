@@ -67,21 +67,20 @@
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 77F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 82F));
             tableLayoutPanel1.Size = new Size(828, 512);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // tsCommands
             // 
             tsCommands.BackColor = Color.White;
-            tsCommands.Dock = DockStyle.Fill;
             tsCommands.ImageScalingSize = new Size(20, 20);
             tsCommands.Items.AddRange(new ToolStripItem[] { tsbAdd, tsbEdit, tsbView, tsbDelete, tsSeprator, tsbRefresh });
             tsCommands.Location = new Point(0, 0);
             tsCommands.Name = "tsCommands";
-            tsCommands.Size = new Size(828, 76);
+            tsCommands.Size = new Size(828, 27);
             tsCommands.TabIndex = 0;
             tsCommands.Text = "toolStrip1";
             // 
@@ -90,45 +89,50 @@
             tsbAdd.Image = Properties.Resources.plus;
             tsbAdd.ImageTransparentColor = Color.Magenta;
             tsbAdd.Name = "tsbAdd";
-            tsbAdd.Size = new Size(61, 73);
+            tsbAdd.Size = new Size(61, 24);
             tsbAdd.Text = "Add";
+            tsbAdd.Click += tsbAdd_Click;
             // 
             // tsbEdit
             // 
             tsbEdit.Image = Properties.Resources.database_edit;
             tsbEdit.ImageTransparentColor = Color.Magenta;
             tsbEdit.Name = "tsbEdit";
-            tsbEdit.Size = new Size(59, 73);
+            tsbEdit.Size = new Size(59, 24);
             tsbEdit.Text = "Edit";
+            tsbEdit.Click += tsbEdit_Click;
             // 
             // tsbView
             // 
             tsbView.Image = Properties.Resources.eye;
             tsbView.ImageTransparentColor = Color.Magenta;
             tsbView.Name = "tsbView";
-            tsbView.Size = new Size(65, 73);
+            tsbView.Size = new Size(65, 24);
             tsbView.Text = "View";
+            tsbView.Click += tsbView_Click;
             // 
             // tsbDelete
             // 
             tsbDelete.Image = Properties.Resources.trash;
             tsbDelete.ImageTransparentColor = Color.Magenta;
             tsbDelete.Name = "tsbDelete";
-            tsbDelete.Size = new Size(77, 73);
+            tsbDelete.Size = new Size(77, 24);
             tsbDelete.Text = "Delete";
+            tsbDelete.Click += tsbDelete_Click;
             // 
             // tsSeprator
             // 
             tsSeprator.Name = "tsSeprator";
-            tsSeprator.Size = new Size(6, 76);
+            tsSeprator.Size = new Size(6, 27);
             // 
             // tsbRefresh
             // 
             tsbRefresh.Image = Properties.Resources.refresh;
             tsbRefresh.ImageTransparentColor = Color.Magenta;
             tsbRefresh.Name = "tsbRefresh";
-            tsbRefresh.Size = new Size(82, 73);
+            tsbRefresh.Size = new Size(82, 24);
             tsbRefresh.Text = "Refresh";
+            tsbRefresh.Click += tsbRefresh_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -137,11 +141,10 @@
             flowLayoutPanel1.Controls.Add(txtSearch);
             flowLayoutPanel1.Controls.Add(lblCount);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(3, 79);
+            flowLayoutPanel1.Location = new Point(3, 43);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(822, 34);
+            flowLayoutPanel1.Size = new Size(822, 45);
             flowLayoutPanel1.TabIndex = 1;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
             // lblSearch
             // 
@@ -159,6 +162,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(339, 30);
             txtSearch.TabIndex = 4;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // lblCount
             // 
@@ -174,9 +178,9 @@
             // 
             pnlCustomersData.Controls.Add(dgvCustomers);
             pnlCustomersData.Dock = DockStyle.Fill;
-            pnlCustomersData.Location = new Point(3, 119);
+            pnlCustomersData.Location = new Point(3, 94);
             pnlCustomersData.Name = "pnlCustomersData";
-            pnlCustomersData.Size = new Size(822, 390);
+            pnlCustomersData.Size = new Size(822, 415);
             pnlCustomersData.TabIndex = 2;
             // 
             // dgvCustomers
@@ -192,7 +196,7 @@
             dgvCustomers.ReadOnly = true;
             dgvCustomers.RowHeadersWidth = 51;
             dgvCustomers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCustomers.Size = new Size(822, 390);
+            dgvCustomers.Size = new Size(822, 415);
             dgvCustomers.TabIndex = 0;
             // 
             // colid
