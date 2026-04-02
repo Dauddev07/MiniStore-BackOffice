@@ -13,7 +13,7 @@ namespace App.Core.Models
         public string Address { get; set; }
         public Customer()
         {
-            Id = Guid.NewGuid().ToString("N").Substring(0,9);
+            Id ="C-"+ Guid.NewGuid().ToString("N").Substring(0,9);
         }
 
       
