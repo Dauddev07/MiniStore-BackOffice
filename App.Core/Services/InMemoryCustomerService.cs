@@ -9,21 +9,21 @@ namespace App.Core.Services
     public class InMemoryCustomerService : ICustomerService
     {
         private List<Customer> _customers = new List<Customer>();
-        public List<Customer> GetAll()
+        List<Customer> ICustomerService.GetAll()
         {
             return _customers.ToList();
         }
-        public Customer GetById(string id)
+         Customer ICustomerService.GetById(string id)
         {
             return _customers.FirstOrDefault(c=>c.Id==id);
         }
-        public void Add(Customer customer)
+        void ICustomerService.Add(Customer customer)
         {
             if (customer == null) 
                 throw new ArgumentNullException("Customer object is null");
             _customers.Add(customer);
         }
-        public void Update(Customer customer)
+         void ICustomerService.Update(Customer customer)
         {
             if (customer == null) 
                 throw new ArgumentNullException("Customer object is null");
@@ -37,14 +37,14 @@ namespace App.Core.Services
             existing.Address = customer.Address;
 
         }
-        public void Delete(string id)
+         void ICustomerService.Delete(string id)
         {
             _customers.RemoveAll(c=>c.Id== id);
         }
-        public List<Customer> Search(string query)
+         List<Customer> ICustomerService.Search(string query)
         {
             if (string.IsNullOrWhiteSpace(query))
-                return GetAll();
+                return ((ICustomerService)this).GetAll();
             return _customers.Where(c=>c.Name.Contains(query, StringComparison.OrdinalIgnoreCase)).ToList();
         }
     }
