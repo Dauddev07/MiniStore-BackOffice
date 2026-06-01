@@ -10,19 +10,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using App.WindowsApp.Views;
 using App.Core.Services;
+using App.Core.Contracts;
+using System.Configuration;
 
 
 namespace App.WindowsApp.Forms
 {
     public partial class MainForm : Form
+
     {
-        InMemoryProductService _productService = new InMemoryProductService();
-        InMemoryCustomerService _customerService = new InMemoryCustomerService();
+        String connectionString;
+        IProductService _productService;
+        //InMemoryCustomerService _customerService = new InMemoryCustomerService();
+        ICustomerService _customerService;
         private readonly Dictionary<Type, UserControl> _views = new Dictionary<Type, UserControl>();
         //private IProductService _productService;
         public MainForm()
         {
             InitializeComponent();
+            connectionString = ConfigurationManager.ConnectionStrings["MiniStoreDB"].ConnectionString;
+            _productService = new DBProductService(connectionString);
+            _customerService = new DBCustomerService(connectionString);
             //_productService = new InMemoryProductService();
         }
 

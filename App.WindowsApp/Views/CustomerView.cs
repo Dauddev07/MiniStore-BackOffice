@@ -20,6 +20,7 @@ namespace App.WindowsApp.Views
             InitializeComponent();
             _customerService = _service;
             dgvCustomers.DataSource = _bindingSource;
+            LoadCustomers();
         }
         private void LoadCustomers()
         {

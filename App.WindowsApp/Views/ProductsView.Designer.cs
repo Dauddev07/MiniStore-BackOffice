@@ -140,6 +140,7 @@
             tsbDelete.Name = "tsbDelete";
             tsbDelete.Size = new Size(77, 59);
             tsbDelete.Text = "Delete";
+            tsbDelete.Click += tsbDelete_Click;
             // 
             // toolStripSeparator1
             // 

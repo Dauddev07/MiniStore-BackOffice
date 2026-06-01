@@ -75,12 +75,13 @@ namespace App.WindowsApp.Views
                 prodForm.ShowDialog();
             }
         }
-        private void RefreshGrid()
+        //private void RefreshGrid()
+        private async void RefreshGrid()
         {
             string searchText = txbSearch.Text;
 
-            ProductCategoryEnum?  selectedCategory=null;
-            if(cmbCategory.SelectedItem != null)
+            ProductCategoryEnum? selectedCategory = null;
+            if (cmbCategory.SelectedItem != null)
             {
                 if (cmbCategory.SelectedItem.ToString().Equals("--ALL--"))
                 {
@@ -107,23 +108,55 @@ namespace App.WindowsApp.Views
 
 
 
-            _dgvbindingSource.DataSource = service.Search(searchText, selectedCategory, selectedStatus);
+            // _dgvbindingSource.DataSource = service.Search(searchText, selectedCategory, selectedStatus);
+            _dgvbindingSource.DataSource = await service.SearchAsync(searchText, selectedCategory, selectedStatus);
         }
 
-        private void txbSearch_TextChanged(object sender, EventArgs e)
+        private async void txbSearch_TextChanged(object sender, EventArgs e)
         {
 
             RefreshGrid();
         }
 
-        private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshGrid();
         }
 
-        private void cmbStockStatus_SelectedIndexChanged(object sender, EventArgs e)
+        private async void cmbStockStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshGrid();
+        }
+
+        private void tsbDelete_Click(object sender, EventArgs e)
+        {
+            Product? selectedProduct = _dgvbindingSource.Current as Product;
+            if (selectedProduct == null)
+                return;
+
+            // Confirm before deleting
+            var confirm = MessageBox.Show(
+                $"Are you sure you want to delete '{selectedProduct.Name}'?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (confirm == DialogResult.Yes)
+            {
+                bool deleted = service.Delete(selectedProduct.Id);
+                if (deleted)
+                {
+                    MessageBox.Show("Product deleted successfully.", "Success",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshGrid();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete product.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
